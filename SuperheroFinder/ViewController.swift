@@ -41,6 +41,11 @@ class ViewController: UIViewController,
         return superheroList.count
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! DetailViewController
+        viewController.superhero = superheroList[tableView.indexPathForSelectedRow!.row]
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
